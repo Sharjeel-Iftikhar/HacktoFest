@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <style>
+            .cards {
+    margin: -1rem;
+}
+
+.card {
+    width: 220px;
+    float: left;
+    margin: 1rem;
+    border: 1px solid #d3d3d3;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: white;
+}
+
+@supports (display: grid) {
+    .cards {
+        margin: 0;
+    }
+
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-gap: 1rem;
+    }
+
+
+}
+        </style>
+    </head>
+    <body>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<main class="cards">
+                    <div id="test12"></div>
+                </main>
+                <script>
+                    $(document).ready(function(){
+var mokData = [
+{ category: "Material", id: '1', name: 'Brakedown of machine' },
+{ category: "Material", id: '2', name: 'Brakedown of machine' },
+{ category: "Tool", id: '3', name: 'Brakedown of machine' },
+{ category: "Tool", id: '4', name: 'Brakedown of line' },
+{ category: "Tool", id: '5', name: 'Brakedown of machine' },
+{ category: "Tool", id: '6', name: 'Brakedown of line' },
+{ category: "Tool", id: '7', name: 'Brakedown of machine' },
+{ category: "Tool", id: '8', name: 'Brakedown of line' }
+];
+$.each(mokData, function (i) {
+    var templateString = '<article class="card"><img src="Images/image5.jpg" alt="Denim Jeans" style="width:100%"><h2>' + mokData[i].category + '</h2><p>' + mokData[i].name + '</p><p>' + mokData[i].id + '</p><button id="tes">Start</button></article>';
+    $('#test12').append(templateString);
+})
+
+$("#test12").on("click", function () {
+    alert("test");
+});
+});
+                </script>
+    </body>
+</html>

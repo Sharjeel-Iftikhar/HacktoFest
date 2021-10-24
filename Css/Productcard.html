@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <meta http-equiv="X-UA_Compatible" content="IE=edge">
+<style>
+  * {
+  box-sizing: border-box;
+}
+body, html {
+  height: 100%;
+  margin: 0;
+}
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 320px;
+  float: left;
+  margin:60px;
+  text-align: center;
+  font-family: arial;
+
+  
+}
+.card img{
+    border-radius: 10px;
+    border: 1px solid black;
+    width: auto;
+    height: 200px;
+
+}
+
+.price {
+  color: grey;
+  font-size: 22px;
+}
+
+.card .Update{
+  border: 1px solid white;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 50%;
+  font-size: 18px;
+  display: block;
+  float: left;
+}
+
+.card .Delete{
+  border: 1px solid white;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 50%;
+  font-size: 18px;
+  display: block;
+}
+.card button:hover {
+  opacity: 0.7;
+}
+
+</style>
+</head>
+<body>
+
+  
+
+<h2 style="text-align:center">Product Card</h2>
+
+<div class="card" id="CardDisplay">
+  <img src="" alt="Put Image2" style="width:100%"id="up2">
+  <h1>Tailored Jeans</h1>
+  <p class="price">$19.99</p>
+  <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.</p>
+  <button class="Update">Update</button>
+  <button class="Delete">Delete</button>
+  <input type="file" class="imageupload" id="img2" hidden="hidden"/>
+    <button type="button" id="imageupload2">Choose img</button>
+</div>
+<div class="card">
+    <img src="" alt="Put Image" style="width:100%" id="up1">
+    <h1>Branded Vehicle</h1>
+    <p class="price">$19.99</p>
+    <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.</p>
+    <button class="Update">Update</button>
+    <button class="Delete">Delete</button>
+    <input type="file" class="imageupload" id="img1" hidden="hidden"/>
+    <button type="button" id="imageupload1">Choose img</button>
+  </div>
+  <div class="card">
+    <img src="" alt="Put Image" style="width:100%" id="up">
+    <h1>Branded Vehicle</h1>
+    <p class="price">$59.99</p>
+    <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.</p>
+    <button class="Update">Update</button>
+    <button class="Delete">Delete</button>
+    <input type="file" class="imageupload" id="img" hidden="hidden"/>
+    <button type="button" id="imageupload">Choose img</button>
+  </div>
+  
+    
+<script>
+  
+  var select = document.getElementById("img");
+  var select1 = document.getElementById("imageupload");
+  const preview = document.getElementById("up");
+  select1.addEventListener("click",function(){
+    select.click();
+  });
+  select.addEventListener("change",function(){
+    const file = this.files[0];
+    console.log(file);
+    if(file)
+    {
+      const reader = new FileReader();
+      reader.addEventListener("load",function(){
+        console.log(this);
+      preview.setAttribute("src",this.result);
+      });
+      reader.readAsDataURL(file);
+    }
+  });
+
+   const image1= document.getElementById("img2");
+   const butn2= document.getElementById("imageupload2");
+   const reload=document.getElementById("up2");
+   butn2.addEventListener("click",function(){
+    image1.click();
+   });
+   image1.addEventListener("change",function(){
+     const file1 = this.files[0];
+     console.log(file1);
+     if(file1)
+     {
+       const read = new FileReader();
+       read.addEventListener("load",function(){
+        console.log(this);
+         reload.setAttribute("src",this.result);
+       });
+       read.readAsDataURL(file1);
+     }
+     
+   });
+
+   const image2= document.getElementById("img1");
+   const butn3= document.getElementById("imageupload1");
+   const reload1=document.getElementById("up1");
+   butn3.addEventListener("click",function(){
+    image2.click();
+   });
+   image2.addEventListener("change",function(){
+     const file2 = this.files[0];
+     console.log(file2);
+     if(file2)
+     {
+       const read = new FileReader();
+       read.addEventListener("load",function(){
+        console.log(this);
+         reload1.setAttribute("src",this.result);
+       });
+       read.readAsDataURL(file2);
+     }
+     
+   });
+   
+</script>
+</body>
+</html>

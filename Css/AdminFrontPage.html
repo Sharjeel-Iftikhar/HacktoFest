@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel = "stylesheet" href="css/Admincss.css">
+        <title>AdminPage</title>
+        <link rel="shortcut icon" href="Images/image1.jpg">
+        
+    </head>
+    <body>
+        <div id="navbar" class="topnav">
+            <img class="logo" src="Images/image1.jpg" alt="Comapny logo">
+            <a class="active" href="#">Home</a>
+            <a href="#">News</a>
+            <a href="#">Contact</a>
+            <a href="javascript:void(0);" class="icon" onclick="getMenu()">
+              <i class="fa fa-bars"></i>
+            </a>
+    
+          </div>
+          <script>
+            function getMenu() {
+              var y = document.getElementById("navbar");
+              if (y.className === "topnav") {
+                y.className += " responsive";
+              } else {
+                y.className = "topnav";
+              }
+            }
+            </script>
+
+            <!--Search Panel Admin-->
+            <div class="bg-image">
+            
+
+                <h2 class="fly">Lets Fly With AutomotiQ..</h2>
+
+                <div class="bg-text">
+                    <h2>Search Particular Vehicle</h2>
+                
+                    <select id="dlistSelect" class="select">
+                        <option value="" selected disabled>--Vehicle--</option>
+                        <option value="1">Cars</option>
+                        <option value="2">Bikes</option>
+                        <option value="3">Trucks</option>
+                        <option value="4">-None-</option>
+                        </select>
+                        <input class="input" type="text" readonly="readonly" id="displayOption"/>
+                    <select id="dlistSelect1" class="select">
+                        <option value="" selected disabled>-Category-</option>
+                        <option value="1">New</option>
+                        <option value="2">Used</option>
+                        <option value="3">Rented</option>
+                        <option value="4">-None-</option>
+                        </select>
+                        <input class="input" type="text" readonly="readonly" id="displayOption1"/>
+                
+                        <select id="dlistSelect2" class="select">
+                            <option value="" selected disabled>-Make-</option>
+                            <option value="1">Honda</option>
+                            <option value="2">Corolla</option>
+                            <option value="3">BMW</option>
+                            <option value="4">-None-</option>
+                            </select>
+                            <input class="input" type="text" readonly="readonly" id="displayOption2"/>
+                
+                            <button class="Searchbtn btn-sm"><img src="Images/icon.png"></img>Search</button>
+                          </div>
+                </div>
+                <script>
+                
+                
+                $(function()
+                {
+                  $("#dlistSelect").change(function(){
+                    var showvehicles =$("#dlistSelect option:selected").text();
+                   // $("#displayOption").val(showvehicles);
+                    var y = showvehicles.toString();
+                    if(y=="-None-")
+                    {
+                     $("#displayOption").val(null);
+                    }
+                    else{
+                      $("#displayOption").val(showvehicles);
+                    }
+                
+                  })
+                })
+                $(function()
+                {
+                  $("#dlistSelect1").change(function(){
+                    var showvehicl =$("#dlistSelect1 option:selected").text();
+                   // $("#displayOption").val(showvehicles);
+                    var y = showvehicl.toString();
+                    if(y=="-None-")
+                    {
+                     $("#displayOption1").val(null);
+                    }
+                    else{
+                      $("#displayOption1").val(showvehicl);
+                    }
+                
+                  })
+                })
+                $(function()
+                {
+                  $("#dlistSelect2").change(function(){
+                    var show =$("#dlistSelect2 option:selected").text();
+                   // $("#displayOption").val(showvehicles);
+                    var y = show.toString();
+                    if(y=="-None-")
+                    {
+                     $("#displayOption2").val(null);
+                    }
+                    else{
+                      $("#displayOption2").val(show);
+                    }
+                
+                  })
+                })
+                </script>
+                <!--End of Search-->
+
+               
+
+                <!--Manage Options-->
+                <section class="ManageArea">
+
+                <div class="card">
+                    
+                    <div class="Manage">Manage New Vehicles</div>
+                    <p class="AddVehicle"><a href="#Add Cars">Add Vehicle</a></p>
+                    <p class="AddVehicle"><a href="#Edit Cars">Edit Vehicles</a></p>
+                    <p class="AddVehicle"><a href="#View all Cars">View all Vehicles</a></p>
+                    
+                    
+                  </div>
+                  <div class="card">
+                    
+                    <div class="Manage">Manage Dealers</div>
+                    <p class="AddVehicle"><a href="#Add Cars">Add Vehicle</a></p>
+                    <p class="AddVehicle"><a href="#Edit Cars">Edit Vehicles</a></p>
+                    <p class="AddVehicle"><a href="#View all Cars">View all Vehicles</a></p>
+                    
+                    
+                  </div>
+                  <div class="card">
+                    
+                    <div class="Manage">Manage Rental Service</div>
+                    <p class="AddVehicle"><a href="#Add Cars">Add Vehicle</a></p>
+                    <p class="AddVehicle"><a href="#Edit Cars">Edit Vehicles</a></p>
+                    <p class="AddVehicle"><a href="#View all Cars">View all Vehicles</a></p>
+                    
+                    
+                  </div>
+                  <div class="card">
+                    
+                    <div class="Manage">Manage Used Vehicles</div>
+                    <p class="AddVehicle"><a href="#Add Cars">Add Vehicle</a></p>
+                    <p class="AddVehicle"><a href="#Edit Cars">Edit Vehicles</a></p>
+                    <p class="AddVehicle"><a href="#View all Cars">View all Vehicles</a></p>
+                    
+                    
+                  </div>
+                </section>
+                  <div class="end" style="padding-top: 10px;"></div>
+
+    </body>
+</html>
