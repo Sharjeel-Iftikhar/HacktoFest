@@ -13,19 +13,26 @@ body, html {
   height: 100%;
   margin: 0;
 }
+
+body > h2
+{
+  font-size: 50px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 .card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px 0 rgba(17, 0, 255, 0.2);
   max-width: 320px;
   float: left;
   margin:60px;
   text-align: center;
   font-family: arial;
-
+  padding: 10px;
   
 }
 .card img{
     border-radius: 10px;
-    border: 1px solid black;
+    border: 3px solid black;
     width: auto;
     height: 200px;
 
@@ -39,31 +46,47 @@ body, html {
 .card .Update{
   border: 1px solid white;
   outline: 0;
-  padding: 12px;
+  padding: 10px;
   color: white;
   background-color: #000;
   text-align: center;
   cursor: pointer;
-  width: 50%;
+  width: 40%;
   font-size: 18px;
   display: block;
   float: left;
+  border-radius: 15px;
+  margin-right: 5px;
+  margin-left: 30px;
 }
 
 .card .Delete{
   border: 1px solid white;
   outline: 0;
-  padding: 12px;
+  padding: 10px;
   color: white;
   background-color: #000;
   text-align: center;
   cursor: pointer;
-  width: 50%;
+  width: 40%;
   font-size: 18px;
   display: block;
+  border-radius: 15px;
 }
 .card button:hover {
-  opacity: 0.7;
+  opacity: 0.8;
+  
+}
+
+.chooseimg
+{
+  margin-top: 10px;
+}
+
+.card > h1 
+{
+  font-style: italic;
+  
 }
 
 </style>
@@ -78,38 +101,38 @@ body, html {
   <img src="" alt="Put Image2" style="width:100%"id="up2">
   <h1>Tailored Jeans</h1>
   <p class="price">$19.99</p>
-  <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.</p>
+  <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum.</p>
   <button class="Update">Update</button>
   <button class="Delete">Delete</button>
   <input type="file" class="imageupload" id="img2" hidden="hidden"/>
-    <button type="button" id="imageupload2">Choose img</button>
+    <button type="button" class="chooseimg" id="jeans">Choose Image</button>
 </div>
 <div class="card">
     <img src="" alt="Put Image" style="width:100%" id="up1">
     <h1>Branded Vehicle</h1>
     <p class="price">$19.99</p>
-    <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.</p>
+    <p>Some text about the Vehicle. Model and Seller . Lorem ipsum.</p>
     <button class="Update">Update</button>
     <button class="Delete">Delete</button>
     <input type="file" class="imageupload" id="img1" hidden="hidden"/>
-    <button type="button" id="imageupload1">Choose img</button>
+    <button type="button" class="chooseimg" id="car1">Choose Image</button>
   </div>
   <div class="card">
     <img src="" alt="Put Image" style="width:100%" id="up">
     <h1>Branded Vehicle</h1>
     <p class="price">$59.99</p>
-    <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.</p>
+    <p>Some text about the Vehicle. Model and Size. Lorem ipsum.</p>
     <button class="Update">Update</button>
     <button class="Delete">Delete</button>
     <input type="file" class="imageupload" id="img" hidden="hidden"/>
-    <button type="button" id="imageupload">Choose img</button>
+    <button type="button" class="chooseimg" id="car2">Choose Image</button>
   </div>
   
     
 <script>
   
   var select = document.getElementById("img");
-  var select1 = document.getElementById("imageupload");
+  var select1 = document.getElementById("car2");
   const preview = document.getElementById("up");
   select1.addEventListener("click",function(){
     select.click();
@@ -129,7 +152,7 @@ body, html {
   });
 
    const image1= document.getElementById("img2");
-   const butn2= document.getElementById("imageupload2");
+   const butn2= document.getElementById("jeans");
    const reload=document.getElementById("up2");
    butn2.addEventListener("click",function(){
     image1.click();
@@ -150,7 +173,7 @@ body, html {
    });
 
    const image2= document.getElementById("img1");
-   const butn3= document.getElementById("imageupload1");
+   const butn3= document.getElementById("car1");
    const reload1=document.getElementById("up1");
    butn3.addEventListener("click",function(){
     image2.click();
